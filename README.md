@@ -39,6 +39,7 @@ $ docker run --privileged  -d \
 |`VPN_TYPE`| Yes | WireGuard or OpenVPN? (wireguard/openvpn)|`VPN_TYPE=wireguard`|`openvpn`|
 |`VPN_USERNAME`| No | If username and password provided, configures ovpn file automatically |`VPN_USERNAME=ad8f64c02a2de`||
 |`VPN_PASSWORD`| No | If username and password provided, configures ovpn file automatically |`VPN_PASSWORD=ac98df79ed7fb`||
+|`CREATE_TUN_DEVICE`| No | Creates /dev/net/tun device inside the container, mitigates the need mount the device from the host |CREATE_TUN_DEVICE=true||
 |`WEBUI_PASSWORD`| Yes | The password used to protect/access Jackett's web interface |`WEBUI_PASSWORD=RJayoLnKPjeyHbo-_ziH`||
 |`LAN_NETWORK`| Yes (atleast one) | Comma delimited local Network's with CIDR notation |`LAN_NETWORK=192.168.0.0/24,10.10.0.0/24`||
 |`NAME_SERVERS`| No | Comma delimited name servers |`NAME_SERVERS=1.1.1.1,1.0.0.1`|`1.1.1.1,1.0.0.1`|
