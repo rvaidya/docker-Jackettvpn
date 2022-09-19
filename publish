@@ -1,0 +1,10 @@
+#!/bin/bash -e
+
+JACKETT_VERSION=$(curl -sX GET "https://api.github.com/repos/Jackett/Jackett/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+
+docker build -t jackettvpn .
+docker tag jackettvpn rvaidya/jackettvpn:latest
+docker tag jackettvpn rvaidya/jackettvpn:$JACKETT_VERSION
+
+docker push rvaidya/jackettvpn:latest
+docker push rvaidya/jackettvpn:$JACKETT_VERSION
